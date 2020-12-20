@@ -1,0 +1,16 @@
+image: mdevd
+org: crunospkgs
+
+network: true
+disable-content-trust: true
+
+config:
+  binds:
+    - /lib/modules:/lib/modules
+    - /lib/firmware:/lib/firmware
+    - /sys:/sys
+    - /dev:/dev
+  capabilities:
+    - CAP_SYS_MODULE
+  readonly: true
+  net: none
